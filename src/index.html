@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do it</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/asserts/img/icons8-double-tick-16.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap" rel="stylesheet">
+</head>
+<body class="flex flex-col w-screen h-screen">
+    <div class="flex heading w-full h-[6%]  bg-[#333333] border-b-2 border-green-800">
+        <div class="mobile-toggle flex items-center pl-6">
+            <img width="30" height="30" class="hover:h-[32px] hover:w-[32px] hover:cursor-pointer" src="https://img.icons8.com/ios-filled/30/FFFFFF/menu--v6.png" alt="menu--v6"/>
+        </div>
+        <div class="title flex items-center justify-center grow">
+            <div class="image-div h-[30px] w-[30px]"><img class="main-icon h-[47px] w-[45px] pb-[15px]" alt="icon"></div>
+            <span class="text-3xl title-text text-stone-50">To <span class="title-change text-green-800">Do-It</span></span>
+        </div>
+    </div>
+    <div class="content-div flex lg:flex-row flex-col h-[89%] w-full">
+        <nav class="nav-bar w-[100%] lg:w-[282px] lg:min-h-[89%]  bg-[#333333] grow-0 lg:border-r-2 lg:border-green-800 text-white flex flex-col items-center overflow-auto">
+            <div class="top-section-nav flex flex-col items-start space-y-3 w-[80%] py-2">
+                <button class="inbox nav-item-1 flex items-center w-[100%] py-2 space-x-1 rounded-md hover:bg-green-800  hover:font-bold  active:bg-green-800">
+                    <img width="24" height="24" src="https://img.icons8.com/material-rounded/24/FFFFFF/inbox.png" alt="inbox"/>
+                    <span>Inbox</span>
+                </button>
+                <button class="today nav-item-1 flex items-center rounded py-2 space-x-1 hover:bg-green-800  hover:font-bold w-[80%] active:bg-green-800">
+                    <img width="24" height="24" src="https://img.icons8.com/fluency-systems-filled/24/FFFFFF/today.png" alt="today"/>
+                    <span>Today</span>
+                </button>
+                <button class="this-week nav-item-1 flex items-center py-2 rounded space-x-1 hover:bg-green-800 w-[80%] hover:font-bold  active:bg-green-800">
+                    <img width="24" height="24" src="https://img.icons8.com/fluency-systems-filled/24/FFFFFF/week-view.png" alt="week-view"/>
+                    <span>Next 7 days</span>
+                </button>
+            </div>
+            <div class="projects-section-nav w-full flex flex-col items-center">
+                <div class="flex items-center w-full">
+                    <div class="project-title"><span class="text-xl font-bold py-4 px-2">Projects</span></div>
+                    <div class="add-project-icon-div lg:grow flex items-end justify-center"><img width="48" height="48" class="add-project-icon h-[24px] w-[24px] hover:h-[28px] hover:w-[28px]" src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/FFFFFF/external-add-social-media-ui-tanah-basah-glyph-tanah-basah.png" alt="external-add-social-media-ui-tanah-basah-glyph-tanah-basah"/></div>
+                </div>
+                <dialog class="addProjectDialog rounded-xl">
+                    <form action="" method="" name="addProject" id="addProjectForm" class="flex flex-col space-y-4 items-center justify-center  p-8 ">
+                        <input type="text" name="projectNameInput" id="projectNameInput" class="border-2 border-dark-800 rounded-xl p-2 shadow-xl" required placeholder="Enter Project Name" maxlength="20">
+                        <div class="project-form-buttons flex items-center justify-between w-[100%]">
+                            <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full projectFormCreateBtn">Create</button>
+                            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full projectFormCancelBtn" formnovalidate>Cancel</button>
+                        </div>
+                    </form>
+                </dialog>
+                <div class="project-top-div nav-item-2 flex flex-col w-[80%] overflow-y-auto pt-3">
+
+                </div>
+            </div>
+        </nav>
+        
+        <div class="to-do-div h-full  bg-[#1F1E1F] grow flex flex-col items-center overflow-auto">
+            <div class="current-project pt-6 flex w-full px-6">
+                <span class="text-3xl text-white font-bold w-[full] projestNameInTodo truncate">Inbox</span>
+            </div>
+            <div class="Todo-info h-[50px] w-[80%] lg:h-[75px] lg:w-[840px] flex justify-between items-end border-b-2 border-[grey]">
+                <div class="task-number text-white text-lg font-large mb-1 font-bold">Tasks &#40;<span class="tasks-number">0</span>&#41;</div>
+                <img width="48" height="48" title="Add Task" class="addTaskImg h-[48px] w-[48px] mb-2 hover:h-[50px] hover:w-[50px]" src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/FFFFFF/external-add-social-media-ui-tanah-basah-glyph-tanah-basah.png" alt="external-add-social-media-ui-tanah-basah-glyph-tanah-basah"/>
+            </div>
+            <dialog class="addTaskDialog rounded-xl">
+                <div class="font-semibold text-xl pt-3 px-3 text-center">Enter Task Details</div>
+                <form method="" action="" name="addTask" id="addTask" class="flex flex-col taskForm space-y-2 w-[350px] p-5 rounded-xl">
+                    <input type="text" name="taskName" maxlength="21" id="taskName" class="border-2 border-dark-800 rounded-xl p-2 shadow-xl" placeholder="Task name (upto 20 characters)" required/>
+                    <textarea type="textarea" rows='5' name="taskDesc" id="taskDesc" class="border-2 border-dark-800 rounded-xl p-2 shadow-xl" placeholder="Task Description" required></textarea>
+                    <div class="project selection flex flex-col space-y-2">
+                        <label for='projectForm' class="font-semibold">Select Project</label>
+                        <select class="border-2 border-dark-800 rounded-xl p-2 shadow-xl" id="projectForm">
+                        </select>
+                    </div>
+                    <div class="priority-select flex flex-col space-y-2">
+                        <label for='priorityForm' class="font-semibold">Select Priority</label>
+                        <select class="border-2 border-dark-800 rounded-xl p-2 shadow-xl" id="priorityForm">
+                            <option class="high-priority text-red-800" value="1" >
+                                High Priority
+                            </option>
+                            <option class="medium-priority text-yellow-600" value="2" >
+                                Medium Priority
+                            </option>
+                            <option class="low-priority text-blue-800" value="3" >
+                                Low Priority
+                            </option>
+                            <option class="no-priority" value="4" selected>
+                                No Priority
+                            </option>
+                        </select>
+                    </div>
+                    <div class="dueDate pt-2">
+                    <label for='dueDate' class="font-semibold">Pick a date</label>
+                    <input type="date" id="dueDate" name="dueDate" class='border-2 border-dark-800'/>
+                    </div>
+                    <div class="flex justify-around pt-2">
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full addTaskForm">Add Task</button>
+                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full closeAddTaskForm" formnovalidate>Cancel</button>
+                    </div>
+                </form>
+            </dialog>
+            <dialog class="editTaskDialog rounded-xl">
+                <div class="font-semibold text-xl pt-3 px-3 text-center">Edit Task</div>
+                <form method="" action="" name="editTask" id="editTask" class="flex flex-col taskForm space-y-2 w-[350px] p-5 rounded-xl">
+                    <input type="text" name="edittaskName" maxlength="21" id="edittaskName" class="border-2 border-dark-800 rounded-xl p-2 shadow-xl" placeholder="Task name (upto 20 characters)" required/>
+                    <textarea type="textarea" rows='5' name="edittaskDesc" id="edittaskDesc" class="border-2 border-dark-800 rounded-xl p-2 shadow-xl" placeholder="Task Description" required></textarea>
+                    <div class="project selection flex flex-col space-y-2">
+                        <label for='editprojectForm' class="font-semibold">Select Project</label>
+                        <select class="border-2 border-dark-800 rounded-xl p-2 shadow-xl" id="editprojectForm">
+                        </select>
+                    </div>
+                    <div class="priority-select flex flex-col space-y-2">
+                        <label for='editpriorityForm' class="font-semibold">Select Priority</label>
+                        <select class="border-2 border-dark-800 rounded-xl p-2 shadow-xl" id="editpriorityForm">
+                            <option class="high-priority editTask-1 text-red-800" value="1" >
+                                High Priority
+                            </option>
+                            <option class="medium-priority editTask-2 text-yellow-600" value="2" >
+                                Medium Priority
+                            </option>
+                            <option class="low-priority editTask-3 text-blue-800" value="3" >
+                                Low Priority
+                            </option>
+                            <option class="no-priority editTask-4" value="4">
+                                No Priority
+                            </option>
+                        </select>
+                    </div>
+                    <div class="dueDate pt-2">
+                    <label for='editdueDate' class="font-semibold">Pick a date</label>
+                    <input type="date" id="editdueDate" name="editdueDate" class='border-2 border-dark-800'/>
+                    </div>
+                    <div class="flex justify-around pt-2">
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full editTaskForm">Edit Task</button>
+                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full closeeditTaskForm" formnovalidate>Cancel</button>
+                    </div>
+                </form>
+            </dialog>
+            <div class="todo-list-cards flex flex-col items-center mt-4 space-y-3 ">
+            </div>
+        </div>
+    </div>
+    <div class="footer-div min-w-full h-[7%] lg:h-[5%] bg-[#333333] flex items-start lg:items-center justify-center border-t-2 border-green-800">
+        <div class="copyright flex items-end">
+            <span class="pr-1 text-white font-medium">Copyright</span>
+            <img width="20" height="20" src="https://img.icons8.com/material-outlined/20/FFFFFF/copyright.png" alt="copyright"/>
+            <span class="pl-1 text-white font-medium mr-1"> 2023 Manikanth</span>
+        </div>
+        <div class="github-icon">
+            <a href="https://github.com/manikanth1811/TO-DO-IT" target="_blank" class="github-link"><img width="24" height="24" src="https://img.icons8.com/material-outlined/24/FFFFFF/github.png" alt="github"/></a>
+        </div>
+    </div>
+</body>
+</html>

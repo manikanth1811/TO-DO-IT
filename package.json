@@ -1,0 +1,33 @@
+{
+  "name": "to-do-it",
+  "version": "1.0.0",
+  "description": "A simple TO DO app as part of TOP curriculum",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "favicons": "^7.1.4",
+    "favicons-webpack-plugin": "^6.0.1",
+    "html-bundler-webpack-plugin": "^3.0.3",
+    "html-webpack-plugin": "^5.5.3",
+    "postcss": "^8.4.31",
+    "postcss-loader": "^7.3.3",
+    "postcss-preset-env": "^9.3.0",
+    "style-loader": "^3.3.3",
+    "tailwind-dracula": "^1.1.0",
+    "tailwindcss": "^3.3.5",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "date-fns": "^2.30.0",
+    "lodash": "^4.17.21"
+  }
+}
