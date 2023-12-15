@@ -28,6 +28,8 @@
   },
   "dependencies": {
     "date-fns": "^2.30.0",
-    "lodash": "^4.17.21"
+    "eslint": "^8.7.0",
+    "lodash": "^4.17.21",
+    "prettier": "^2.5.1"
   }
 }
